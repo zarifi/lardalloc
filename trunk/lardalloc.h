@@ -10,8 +10,14 @@
 	
 	
 	typedef struct lardbuffer {
+			/*!
+			*  Block size
+			*/
   	  unsigned int size;
-    	unsigned short first_free;
+  	  /*!
+  	  *  Lard_ptr to the first free memory block
+  	  */
+    	LARD_PTR first_free;
 	} lardbuffer;
 	
 	lardbuffer * initialize_buffer(unsigned int elementsize, unsigned short maxelements);
@@ -20,6 +26,7 @@
 	
 	void lardfree(lardbuffer *b, void * ptr);
 #endif // LARDALLOC_H_INCLUDED
+
 
 
 
