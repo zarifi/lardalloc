@@ -1,0 +1,80 @@
+\hypertarget{lardalloc_8h}{
+\section{lardalloc.h File Reference}
+\label{lardalloc_8h}\index{lardalloc.h@{lardalloc.h}}
+}
+{\tt \#include $<$tigcclib.h$>$}\par
+{\tt \#include $<$limits.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structlardbuffer}{lardbuffer}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{lardalloc_8h_49999be01380f41cc0d0f1f1406fb277}{HEADER\_\-SIZE}~sizeof(\hyperlink{structlardbuffer}{lardbuffer})
+\item 
+\#define \hyperlink{lardalloc_8h_8c4642f07119f3f18e140a37d9d77a52}{LARD\_\-PTR}~unsigned short
+\item 
+\#define \hyperlink{lardalloc_8h_3acffbd305ee72dcd4593c0d8af64a4f}{MIN}(a, b)~(a$<$b?a:b)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structlardbuffer}{lardbuffer} $\ast$ \hyperlink{lardalloc_8h_97e1efc1b998a9efeb9441b1f2eba528}{initialize\_\-buffer} (unsigned int elementsize, unsigned short maxelements)
+\item 
+void $\ast$ \hyperlink{lardalloc_8h_a4d4f6fdf931ab84f9adb2fd87b1124d}{allocate} (\hyperlink{structlardbuffer}{lardbuffer} $\ast$b)
+\item 
+void \hyperlink{lardalloc_8h_67e8e875224d00570962cd111127b567}{lardfree} (\hyperlink{structlardbuffer}{lardbuffer} $\ast$b, void $\ast$ptr)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{lardalloc_8h_49999be01380f41cc0d0f1f1406fb277}{
+\index{lardalloc.h@{lardalloc.h}!HEADER\_\-SIZE@{HEADER\_\-SIZE}}
+\index{HEADER\_\-SIZE@{HEADER\_\-SIZE}!lardalloc.h@{lardalloc.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HEADER\_\-SIZE~sizeof({\bf lardbuffer})}}
+\label{lardalloc_8h_49999be01380f41cc0d0f1f1406fb277}
+
+
+\hypertarget{lardalloc_8h_8c4642f07119f3f18e140a37d9d77a52}{
+\index{lardalloc.h@{lardalloc.h}!LARD\_\-PTR@{LARD\_\-PTR}}
+\index{LARD\_\-PTR@{LARD\_\-PTR}!lardalloc.h@{lardalloc.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LARD\_\-PTR~unsigned short}}
+\label{lardalloc_8h_8c4642f07119f3f18e140a37d9d77a52}
+
+
+\hypertarget{lardalloc_8h_3acffbd305ee72dcd4593c0d8af64a4f}{
+\index{lardalloc.h@{lardalloc.h}!MIN@{MIN}}
+\index{MIN@{MIN}!lardalloc.h@{lardalloc.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MIN(a, \/  b)~(a$<$b?a:b)}}
+\label{lardalloc_8h_3acffbd305ee72dcd4593c0d8af64a4f}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{lardalloc_8h_a4d4f6fdf931ab84f9adb2fd87b1124d}{
+\index{lardalloc.h@{lardalloc.h}!allocate@{allocate}}
+\index{allocate@{allocate}!lardalloc.h@{lardalloc.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ allocate ({\bf lardbuffer} $\ast$ {\em b})}}
+\label{lardalloc_8h_a4d4f6fdf931ab84f9adb2fd87b1124d}
+
+
+Returns a pointer to an allocated memory block of size b-$>$size \hypertarget{lardalloc_8h_97e1efc1b998a9efeb9441b1f2eba528}{
+\index{lardalloc.h@{lardalloc.h}!initialize\_\-buffer@{initialize\_\-buffer}}
+\index{initialize\_\-buffer@{initialize\_\-buffer}!lardalloc.h@{lardalloc.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lardbuffer}$\ast$ initialize\_\-buffer (unsigned int {\em elementsize}, \/  unsigned short {\em maxelements})}}
+\label{lardalloc_8h_97e1efc1b998a9efeb9441b1f2eba528}
+
+
+Allocates the buffer with a system malloc call.\par
+ \par
+ Elementsize is the block size for the allocator, and maxelements is the number of elements the allocator Should pre-allocate for. \hypertarget{lardalloc_8h_67e8e875224d00570962cd111127b567}{
+\index{lardalloc.h@{lardalloc.h}!lardfree@{lardfree}}
+\index{lardfree@{lardfree}!lardalloc.h@{lardalloc.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lardfree ({\bf lardbuffer} $\ast$ {\em b}, \/  void $\ast$ {\em ptr})}}
+\label{lardalloc_8h_67e8e875224d00570962cd111127b567}
+
+
+Frees the memory block pointer to by ptr, which must be in larbuffer b 

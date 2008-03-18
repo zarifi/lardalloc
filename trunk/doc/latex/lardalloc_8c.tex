@@ -1,0 +1,59 @@
+\hypertarget{lardalloc_8c}{
+\section{lardalloc.c File Reference}
+\label{lardalloc_8c}\index{lardalloc.c@{lardalloc.c}}
+}
+{\tt \#include \char`\"{}lardalloc.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void $\ast$ \hyperlink{lardalloc_8c_32e8cfafb885837f699cc02a0dbcda92}{conv\_\-to\_\-ptr} (const \hyperlink{structlardbuffer}{lardbuffer} $\ast$b, LARD\_\-PTR ptr)
+\item 
+LARD\_\-PTR \hyperlink{lardalloc_8c_8c075fbe3c72f0a2c80cef3f30a4d3d1}{conv\_\-to\_\-short} (const \hyperlink{structlardbuffer}{lardbuffer} $\ast$b, const void $\ast$ptr)
+\item 
+\hyperlink{structlardbuffer}{lardbuffer} $\ast$ \hyperlink{lardalloc_8c_97e1efc1b998a9efeb9441b1f2eba528}{initialize\_\-buffer} (unsigned int elementsize, unsigned short maxelements)
+\item 
+void $\ast$ \hyperlink{lardalloc_8c_a4d4f6fdf931ab84f9adb2fd87b1124d}{allocate} (\hyperlink{structlardbuffer}{lardbuffer} $\ast$b)
+\item 
+void \hyperlink{lardalloc_8c_67e8e875224d00570962cd111127b567}{lardfree} (\hyperlink{structlardbuffer}{lardbuffer} $\ast$b, void $\ast$ptr)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{lardalloc_8c_a4d4f6fdf931ab84f9adb2fd87b1124d}{
+\index{lardalloc.c@{lardalloc.c}!allocate@{allocate}}
+\index{allocate@{allocate}!lardalloc.c@{lardalloc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ allocate ({\bf lardbuffer} $\ast$ {\em b})}}
+\label{lardalloc_8c_a4d4f6fdf931ab84f9adb2fd87b1124d}
+
+
+Returns a pointer to an allocated memory block of size b-$>$size \hypertarget{lardalloc_8c_32e8cfafb885837f699cc02a0dbcda92}{
+\index{lardalloc.c@{lardalloc.c}!conv\_\-to\_\-ptr@{conv\_\-to\_\-ptr}}
+\index{conv\_\-to\_\-ptr@{conv\_\-to\_\-ptr}!lardalloc.c@{lardalloc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ conv\_\-to\_\-ptr (const {\bf lardbuffer} $\ast$ {\em b}, \/  LARD\_\-PTR {\em ptr})}}
+\label{lardalloc_8c_32e8cfafb885837f699cc02a0dbcda92}
+
+
+Converts the LARD\_\-PTR to a system wide pointer \hypertarget{lardalloc_8c_8c075fbe3c72f0a2c80cef3f30a4d3d1}{
+\index{lardalloc.c@{lardalloc.c}!conv\_\-to\_\-short@{conv\_\-to\_\-short}}
+\index{conv\_\-to\_\-short@{conv\_\-to\_\-short}!lardalloc.c@{lardalloc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}LARD\_\-PTR conv\_\-to\_\-short (const {\bf lardbuffer} $\ast$ {\em b}, \/  const void $\ast$ {\em ptr})}}
+\label{lardalloc_8c_8c075fbe3c72f0a2c80cef3f30a4d3d1}
+
+
+Converts a systemwide pointer to somewhere inside the buffer into an LARD\_\-PTR which points locally \hypertarget{lardalloc_8c_97e1efc1b998a9efeb9441b1f2eba528}{
+\index{lardalloc.c@{lardalloc.c}!initialize\_\-buffer@{initialize\_\-buffer}}
+\index{initialize\_\-buffer@{initialize\_\-buffer}!lardalloc.c@{lardalloc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lardbuffer}$\ast$ initialize\_\-buffer (unsigned int {\em elementsize}, \/  unsigned short {\em maxelements})}}
+\label{lardalloc_8c_97e1efc1b998a9efeb9441b1f2eba528}
+
+
+Allocates the buffer with a system malloc call.\par
+ \par
+ Elementsize is the block size for the allocator, and maxelements is the number of elements the allocator Should pre-allocate for. \hypertarget{lardalloc_8c_67e8e875224d00570962cd111127b567}{
+\index{lardalloc.c@{lardalloc.c}!lardfree@{lardfree}}
+\index{lardfree@{lardfree}!lardalloc.c@{lardalloc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lardfree ({\bf lardbuffer} $\ast$ {\em b}, \/  void $\ast$ {\em ptr})}}
+\label{lardalloc_8c_67e8e875224d00570962cd111127b567}
+
+
+Frees the memory block pointer to by ptr, which must be in larbuffer b 
