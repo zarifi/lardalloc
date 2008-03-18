@@ -1,11 +1,11 @@
-// C Source File
-// Created 03/15/2008 06:32:43 PM
-
-/*!
-*  By Lardmaster,
-*  Anyone feel free to use it for any purposes
-*
-*  Uses unsigned shorts as pointers for the linked list of free block, to save memory.  Thus the max number of blocks is 65,534
+/*! \mainpage Lardalloc Memory Allocator
+*  C Source File \n
+*  Created 03/15/2008 06:32:43 PM\n
+*  \n
+*  By Lardmaster,\n
+*  Anyone feel free to use it for any purposes\n
+* \n
+*  Uses unsigned shorts as pointers for the linked list of free block, to save memory.  Thus the max number of blocks is 65,534.\n
 *  Simple fixed block sized memory allocator with free and allocate.
 */
 
@@ -26,8 +26,8 @@ LARD_PTR conv_to_short(const lardbuffer *b, const void * ptr) {
 }
 
 /*!
-*  Allocates the buffer with a system malloc call.
-*  
+*  Allocates the buffer with a system malloc call.\n
+*  \n
 *  Elementsize is the block size for the allocator, and maxelements is the number of elements the allocator
 *  Should pre-allocate for.
 */
@@ -63,3 +63,4 @@ void lardfree(lardbuffer *b, void * ptr) {
     b->first_free = conv_to_short(b,ptr);
     *(LARD_PTR *) ptr = old_first;
 }
+
