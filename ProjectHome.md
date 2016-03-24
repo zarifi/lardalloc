@@ -1,0 +1,5 @@
+A basic memory allocator.  Only does fixed block sizes.  Maximum of 65,534 blocks, and a maximum block size greater than that of any Ti Calculator's memory.  Minimum block size of two bytes but it will work with a one byte block size, just taking up twice the memory by using two byte blocks in the actual implementation.
+
+Uses a linked list of the free blocks.  Instead of pointers, it uses unsigned shorts as the index of the next block, thus the maximum of 65,534 blocks.  I implemented this because TIOS's malloc is inefficient, and the TIGCC manual specifically warns against using it for linked lists.  This library will work great with linked lists, trees, and other data structures with fixed size nodes.
+
+The library is "done" and should work as is.  (I know it can be hard to tell from looking at a google code page).  I'm not planning on implementing any more ambitious features.
